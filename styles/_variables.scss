@@ -1,0 +1,51 @@
+:root {
+  --color-light: #ffffff;
+  --color-light-trans: #ffffffcc;
+  --color-light-alt: #f1f1f1;
+  --color-dark: #140e33;
+  --color-dark-trans: #140e3355;
+  --color-accent: #4332a1;
+  --color-accent-alt: #3c2d8f;
+
+  --header-appearing-delay: .7s;
+  --header-logo-delay: 7s;
+  --notebook-appearing-delay: 1.1s;
+  --notebook-top-opening-delay: .8s;
+  --notebook-screen-light-up-delay: .6s;
+  --hero-button-delay: 1s;
+
+  --glass-shadow: 0 4px 10px var(--color-dark-trans);
+  --glass-border: 3px solid var(--color-light-alt);
+
+  --font-family-base: 'Nunito', sans-serif;
+  --font-weight-base: 300;
+  --font-weight-high: 700;
+  --line-height-base: 1.2;
+
+  --font-size-base: 20px;
+  --font-size-h1: 60px;
+  --font-size-h2: 48px;
+
+  --header-height: 160px;
+
+  @include desktop-s {
+    --font-size-base: 18px;
+    --font-size-h1: 48px;
+
+    --header-height: 120px;
+  }
+
+  @include tablet-l {
+    --font-size-base: 16px;
+    --font-size-h1: 38px;
+
+    --header-height: 90px;
+  }
+
+  @include tablet-s {
+    --font-size-base: 14px;
+    --font-size-h1: 30px;
+
+    --header-height: 60px;
+  }
+}

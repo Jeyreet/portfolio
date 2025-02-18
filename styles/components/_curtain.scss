@@ -1,0 +1,33 @@
+.curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+
+  &__top,
+  &__bottom {
+    background-color: var(--color-accent);
+    position: absolute;
+    inset: 0;
+    transition: .7s;
+  }
+
+  &__top {
+    bottom: 50vh;
+  }
+
+  &__bottom {
+    top: 50vh;
+  }
+
+  body.loaded & {
+    pointer-events: none;
+
+    &__top {
+      bottom: 100vh;
+    }
+
+    &__bottom {
+      top: 100vh;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.button {
+  font-weight: var(--font-weight-high);
+  border: var(--glass-border);
+  background-color: var(--color-light-trans);
+  box-shadow: var(--glass-shadow);
+  padding: 1em 1.5em;
+  border-radius: 10px;
+  transition: scale .4s;
+
+  @include hover() {
+    scale: 1.05;
+  }
+
+  &:active {
+    transition: scale .1s;
+    scale: 0.97;
+  }
+}
