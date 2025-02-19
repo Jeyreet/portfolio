@@ -5,6 +5,7 @@ body {
   line-height: var(--line-height-base);
   color: var(--color-dark);
   background-color: var(--color-light-alt);
+  padding-top: var(--header-height);
 }
 
 h1, h2, h3, h4 {

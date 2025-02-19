@@ -6,13 +6,14 @@
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   height: var(--header-height);
+  padding-inline: 50px;
+  color: var(--color-accent);
+  transform: translateY(-100%);
+  transition: height .3s;
+  gap: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 50px;
-  color: var(--color-accent);
-  gap: 50px;
-  transform: translateY(-100%);
 
   body.loaded & {
     animation: header--appearing .5s var(--header-appearing-delay) both;
@@ -25,20 +26,79 @@
     border-right: none;
   }
 
+  @include tablet-s {
+    flex-direction: column;
+    gap: 0;
+    overflow-y: clip;
+
+    &.open {
+      height: 100vh;
+      overscroll-behavior: none;
+      overflow-y: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &.open &__menu {
+      display: block;
+    }
+
+    &:not(.open) &__menu {
+      animation: hide 1ms .5s both;
+
+      @keyframes hide {
+        from {
+          display: block;
+        }
+        to {
+          display: none;
+        }
+      }
+    }
+  }
+
   &__outer {
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
+    z-index: 1;
 
     @include desktop-s {
       padding-inline: 0;
     }
   }
 
+  &__logo-outer {
+    @include tablet-s {
+      display: flex;
+      align-self: stretch;
+      flex-shrink: 0;
+      justify-content: space-between;
+      align-items: center;
+      height: var(--header-height);
+    }
+  }
+
   &__menu {
+    &-outer {
+      @include tablet-s {
+        flex-shrink: 0;
+        height: calc(100vh - var(--header-height) - 1px);
+        display: flex;
+        align-items: center;
+      }
+    }
+
     &-list {
       display: flex;
       align-items: center;
       gap: 2em;
+
+      @include tablet-s {
+        flex-direction: column;
+      }
     }
 
     &-link {
@@ -75,6 +135,28 @@
           height: calc(100% - .8em);
         }
       }
+    }
+  }
+
+  &__burger-button {
+    display: none;
+
+    &::before {
+      display: block;
+      content: '';
+      height: 3px;
+      width: 60%;
+      border-radius: 5px;
+      background-color: var(--color-accent);
+      @include abs-center();
+      box-shadow:
+              0 7px var(--color-accent),
+              0 -7px var(--color-accent);
+    }
+
+    @include tablet-s {
+      display: block;
+      position: relative;
     }
   }
 

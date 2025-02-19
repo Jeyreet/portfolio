@@ -39,7 +39,7 @@
   &__top-backface {
     @include flex-center();
 
-    transform: perspective(130cqw) rotateX(185deg) rotateZ(180deg);
+    transform: perspective(130cqw) rotateX(183deg) rotateZ(180deg);
 
     body.loaded & {
       animation: notebook__top-backface--opening .8s calc(var(--notebook-appearing-delay) + var(--notebook-top-opening-delay)) both;
@@ -61,29 +61,9 @@
       animation: notebook__top--opening .8s calc(var(--notebook-appearing-delay) + var(--notebook-top-opening-delay)) both;
     }
 
-    transform: perspective(130cqw) rotateX(5deg);
+    transform: perspective(130cqw) rotateX(3deg);
     z-index: 1;
     box-shadow: 0 1cqw 0 -.5cqw var(--color-dark);
-
-    &-screen {
-      position: absolute;
-      inset: 1cqw 1cqw 2.7cqw;
-      border-radius: 1.5cqw;
-
-      body.loaded & {
-        animation: notebook__top-screen--light-up .5s calc(var(--notebook-appearing-delay) + var(--notebook-top-opening-delay) + var(--notebook-screen-light-up-delay)) both;
-      }
-
-      @keyframes notebook__top-screen--light-up {
-        from {
-          background-color: var(--color-dark);
-        }
-
-        to {
-          background-color: var(--color-light);
-        }
-      }
-    }
 
     &-logo {
       font-size: 1.5cqw;
@@ -193,15 +173,99 @@
       border-top-left-radius: 1cqw;
     }
 
-    &-left {
+    &-right {
       border-top-right-radius: 1cqw;
+    }
+  }
+
+  &__screen {
+    position: absolute;
+    inset: 1cqw 1cqw 2.7cqw;
+    border-radius: 1.5cqw;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    padding: 3cqw;
+    gap: 1cqw;
+
+    body.loaded & {
+      animation: notebook__top-screen--light-up .5s calc(var(--notebook-appearing-delay) + var(--notebook-top-opening-delay) + var(--notebook-screen-light-up-delay)) both;
+    }
+
+    @keyframes notebook__top-screen--light-up {
+      from {
+        background-color: var(--color-dark);
+      }
+
+      to {
+        background-color: var(--color-light);
+      }
+    }
+  }
+
+  &__code {
+    background-color: var(--color-accent);
+    opacity: .8;
+    width: 10cqw;
+    height: 2cqw;
+    border-radius: .5cqw;
+    animation: show .5s both paused;
+
+    &.shown {
+      animation-play-state: running;
+    }
+
+    @keyframes show {
+      from {
+        transform: translateX(5cqw);
+        opacity: 0;
+      }
+    }
+
+    &-line {
+      display: flex;
+      gap: 1cqw;
+    }
+
+    &--yellow {
+      background-color: #ffb654;
+      opacity: 1;
+    }
+
+    &--pink {
+      background-color: #f774ff;
+      opacity: 1;
+    }
+
+    &--transparent {
+      opacity: .6;
+    }
+
+    &--short {
+      width: 5cqw;
+    }
+
+    &--long {
+      width: 15cqw;
+    }
+
+    &--short-offset {
+      margin-left: 4cqw;
+    }
+
+    &--long-offset {
+      margin-left: 8cqw;
+    }
+
+    &--huge-offset {
+      margin-left: 12cqw;
     }
   }
 
   @keyframes notebook--appearing {
     55% {
       opacity: 1;
-      transform: translateY(20%);
+      transform: translateY(20%) scaleY(1.7);
       animation-timing-function: ease-in-out;
     }
     to {

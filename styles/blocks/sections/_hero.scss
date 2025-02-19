@@ -18,6 +18,8 @@
   }
 
   &__first {
+    will-change: transform;
+
     @include tablet-l {
       justify-content: end;
     }
@@ -27,7 +29,7 @@
     gap: 50px;
 
     @include tablet-l {
-      padding-bottom: 50px;
+      padding-bottom: var(--header-height);
       justify-content: start;
     }
   }

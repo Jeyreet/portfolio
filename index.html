@@ -15,52 +15,111 @@
     <div class="curtain__bottom"></div>
 </div>
 <header class="header__outer container__outer">
-    <div class="header container">
-        <a
-                class="header__logo logo"
-                href="#"
-                data-before-1="<"
-                data-before-2="{"
-                data-before-3="["
-                data-before-4="("
-                data-before-5="/"
-                data-after-1="/>"
-                data-after-2="}"
-                data-after-3="]"
-                data-after-4=")"
-                data-after-5="/"
-        >
-            <h1 class="logo__title">j-reet</h1>
-        </a>
-        <nav class="header__menu">
-            <ul class="header__menu-list">
-                <li class="header__menu-item">
-                    <a href="#" class="header__menu-link">Обо мне</a>
-                </li>
-                <li class="header__menu-item">
-                    <a href="#" class="header__menu-link">Портфолио</a>
-                </li>
-                <li class="header__menu-item">
-                    <a href="#" class="header__menu-link">Контакты</a>
-                </li>
-            </ul>
-        </nav>
+    <div class="header container" data-js-header>
+        <div class="header__logo-outer">
+            <a class="header__logo logo"
+                    href="#"
+                    data-before-1="<"
+                    data-before-2="{"
+                    data-before-3="["
+                    data-before-4="("
+                    data-before-5="/"
+                    data-after-1="/>"
+                    data-after-2="}"
+                    data-after-3="]"
+                    data-after-4=")"
+                    data-after-5="/">
+                <h1 class="logo__title">j-reet</h1>
+            </a>
+            <button class="header__burger-button button button--icon" data-js-menu-open-button>
+                <span class="visually-hidden">Открыть меню</span>
+            </button>
+        </div>
+        <div class="header__menu-outer">
+            <nav class="header__menu">
+                <ul class="header__menu-list">
+                    <li class="header__menu-item">
+                        <a href="#" class="header__menu-link">Обо мне</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="#" class="header__menu-link">Портфолио</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="#" class="header__menu-link">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </div>
 </header>
 <main class="main container__outer">
     <section class="hero container">
         <div class="hero__first">
-            <div class="hero__title-outer">
-                <h2 class="hero__title">
-                    <span class="hero__title-visible"></span><span class="hero__title-invisible"></span>
-                </h2>
-            </div>
+            <h2 class="hero__title" data-js-hero-title>
+                <span class="hero__title-visible"></span><span class="hero__title-invisible"></span>
+            </h2>
         </div>
         <div class="hero__second">
             <div class="hero__notebook notebook">
                 <div class="notebook__top-backface notebook-logo">Jeyreet</div>
                 <div class="notebook__top">
-                    <div class="notebook__top-screen"></div>
+                    <div class="notebook__screen">
+                        <div class="notebook__code-line">
+                            <div class="notebook__code notebook__code--yellow notebook__code--short"></div>
+                            <div class="notebook__code notebook__code--transparent notebook__code--short"></div>
+                            <div class="notebook__code notebook__code--pink"></div>
+                        </div>
+                        <div class="notebook__code-line">
+                            <div class="notebook__code notebook__code--yellow notebook__code--short"></div>
+                        </div>
+                        <div class="notebook__code-line">
+                            <div class="notebook__code notebook__code--yellow notebook__code--short notebook__code--short-offset"></div>
+                            <div class="notebook__code notebook__code--transparent notebook__code--long"></div>
+                            <div class="notebook__code notebook__code--short"></div>
+                            <div class="notebook__code notebook__code--pink notebook__code--short"></div>
+                        </div>
+                        <div class="notebook__code-line">
+                            <div class="notebook__code notebook__code--yellow notebook__code notebook__code--long-offset"></div>
+                            <div class="notebook__code notebook__code--transparent notebook__code--short"></div>
+                            <div class="notebook__code"></div>
+                        </div>
+                        <div class="notebook__code-line">
+                            <div class="notebook__code notebook__code--yellow notebook__code--short notebook__code--huge-offset"></div>
+                            <div class="notebook__code notebook__code--transparent notebook__code--long"></div>
+                            <div class="notebook__code notebook__code--long"></div>
+                            <div class="notebook__code notebook__code--yellow notebook__code--short"></div>
+                        </div>
+                        <div class="notebook__code-line">
+                            <div class="notebook__code notebook__code--yellow notebook__code--huge-offset"></div>
+                            <div class="notebook__code notebook__code--transparent notebook__code--short"></div>
+                            <div class="notebook__code notebook__code--pink notebook__code--short"></div>
+                            <div class="notebook__code notebook__code--long"></div>
+                            <div class="notebook__code notebook__code--yellow"></div>
+                        </div>
+                        <div class="notebook__code-line">
+                            <div class="notebook__code notebook__code--yellow notebook__code--short notebook__code--huge-offset"></div>
+                            <div class="notebook__code notebook__code--transparent notebook__code"></div>
+                            <div class="notebook__code notebook__code--short"></div>
+                            <div class="notebook__code notebook__code--yellow notebook__code--short"></div>
+                        </div>
+                        <div class="notebook__code-line">
+                            <div class="notebook__code notebook__code--yellow notebook__code notebook__code--long-offset"></div>
+                        </div>
+                        <div class="notebook__code-line">
+                            <div class="notebook__code notebook__code--yellow notebook__code--short notebook__code--long-offset"></div>
+                            <div class="notebook__code notebook__code--transparent notebook__code"></div>
+                            <div class="notebook__code notebook__code--short"></div>
+                        </div>
+                        <div class="notebook__code-line">
+                            <div class="notebook__code notebook__code--yellow notebook__code--short notebook__code--huge-offset"></div>
+                            <div class="notebook__code notebook__code--pink"></div>
+                        </div>
+                        <div class="notebook__code-line">
+                            <div class="notebook__code notebook__code--transparent notebook__code--huge-offset"></div>
+                            <div class="notebook__code notebook__code--long"></div>
+                            <div class="notebook__code notebook__code--pink notebook__code--short"></div>
+                        </div>
+                    </div>
                     <div class="notebook__top-logo notebook-logo">Jeyreet</div>
                 </div>
                 <div class="notebook__bottom">
@@ -145,6 +204,216 @@
             </div>
         </div>
     </section>
+    <section class="about container">
+        <p>THIS IS ABOUT SECTION</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+    </section>
+    <section class="portfolio container">
+        <p>THIS IS PORTFOLIO SECTION</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+    </section>
+    <section class="contacts container">
+        <p>THIS IS CONTACTS SECTION</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+    </section>
 </main>
+<footer class="footer__outer container__outer">
+    <div class="footer container">
+        <p>THIS IS FOOTER</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+        <p>CONTENT</p>
+    </div>
+</footer>
 </body>
 </html>

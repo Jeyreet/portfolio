@@ -1,6 +1,6 @@
 :root {
   --color-light: #ffffff;
-  --color-light-trans: #ffffffcc;
+  --color-light-trans: #ffffffbb;
   --color-light-alt: #f1f1f1;
   --color-dark: #140e33;
   --color-dark-trans: #140e3355;
@@ -18,7 +18,7 @@
   --glass-border: 3px solid var(--color-light-alt);
 
   --font-family-base: 'Nunito', sans-serif;
-  --font-weight-base: 300;
+  --font-weight-base: 400;
   --font-weight-high: 700;
   --line-height-base: 1.2;
 
@@ -39,13 +39,12 @@
     --font-size-base: 16px;
     --font-size-h1: 38px;
 
-    --header-height: 90px;
   }
 
   @include tablet-s {
     --font-size-base: 14px;
     --font-size-h1: 30px;
 
-    --header-height: 60px;
+    --header-height: 90px;
   }
 }
