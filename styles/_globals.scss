@@ -4,7 +4,7 @@ body {
   font-weight: var(--font-weight-base);
   line-height: var(--line-height-base);
   color: var(--color-dark);
-  background-color: var(--color-light-alt);
+  background: url('/images/background.jpg') var(--color-light-alt);
   padding-top: var(--header-height);
 }
 

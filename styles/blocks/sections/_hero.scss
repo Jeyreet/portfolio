@@ -1,5 +1,5 @@
 .hero {
-  height: calc(100vh - var(--header-height));
+  height: calc(100dvh - var(--header-height));
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 100px;
@@ -8,6 +8,11 @@
     grid-template-columns: auto;
     grid-template-rows: 1fr 1fr;
     gap: 50px;
+    padding-block: calc(var(--header-height) / 2);
+  }
+
+  @include tablet-s {
+    gap: 20px;
   }
 
   &__first,
@@ -21,7 +26,7 @@
     will-change: transform;
 
     @include tablet-l {
-      justify-content: end;
+      justify-content: center;
     }
   }
 
@@ -29,7 +34,6 @@
     gap: 50px;
 
     @include tablet-l {
-      padding-bottom: var(--header-height);
       justify-content: start;
     }
   }

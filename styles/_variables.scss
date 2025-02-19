@@ -50,6 +50,7 @@
   }
 
   @include mobile-l {
+    --header-height: 65px;
     --padding-inline: 15px;
   }
 }

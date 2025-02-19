@@ -40,7 +40,6 @@ menuOpenButtonEl.onclick = () => {
     headerEl.classList.toggle('open');
 }
 
-document.body.classList.add('loaded')
-
-setTimeout(writeHeroTitleText, 1000)
-setTimeout(animateHeroNotebookCode, 2700)
+setTimeout(() => { document.body.classList.add('loaded') }, 500)
+setTimeout(writeHeroTitleText, 1500)
+setTimeout(animateHeroNotebookCode, 3200)

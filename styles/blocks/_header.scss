@@ -32,7 +32,7 @@
     overflow-y: clip;
 
     &.open {
-      height: 100vh;
+      height: 100dvh;
       overscroll-behavior: none;
       overflow-y: scroll;
 
@@ -85,7 +85,7 @@
     &-outer {
       @include tablet-s {
         flex-shrink: 0;
-        height: calc(100vh - var(--header-height) - 1px);
+        height: calc(100dvh - var(--header-height) - 1px);
         display: flex;
         align-items: center;
       }
