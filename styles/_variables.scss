@@ -27,18 +27,19 @@
   --font-size-h2: 48px;
 
   --header-height: 160px;
+  --padding-inline: 50px;
 
   @include desktop-s {
     --font-size-base: 18px;
     --font-size-h1: 48px;
 
     --header-height: 120px;
+    --padding-inline: 30px;
   }
 
   @include tablet-l {
     --font-size-base: 16px;
     --font-size-h1: 38px;
-
   }
 
   @include tablet-s {
@@ -46,5 +47,9 @@
     --font-size-h1: 30px;
 
     --header-height: 90px;
+  }
+
+  @include mobile-l {
+    --padding-inline: 15px;
   }
 }

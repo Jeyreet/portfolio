@@ -6,7 +6,7 @@
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   height: var(--header-height);
-  padding-inline: 50px;
+  padding-inline: var(--padding-inline);
   color: var(--color-accent);
   transform: translateY(-100%);
   transition: height .3s;
