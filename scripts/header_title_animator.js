@@ -8,13 +8,13 @@ export class HeroTitleAnimator {
     write(text) {
         return new Promise(resolve => {
             this.heroTitleVisibleElement.textContent = ''
-            this.heroTitleInvisibleElement.textContent = text
+            this.heroTitleInvisibleElement.textContent = `${text}`
             this.heroTitleElement.classList.remove('hero__title--hiding')
 
             const interval = setInterval(() => {
                 if (this.heroTitleInvisibleElement.textContent.length === 0) {
                     clearInterval(interval)
-                    resolve()
+                    setTimeout(resolve, 1000)
                 }
                 else {
                     this.heroTitleVisibleElement.textContent += this.heroTitleInvisibleElement.textContent.substr(0, 1)

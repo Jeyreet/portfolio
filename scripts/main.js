@@ -1,7 +1,13 @@
-import {HeroTitleAnimator} from "./header_title_animator.js"
+import { HeroTitleAnimator } from "./header_title_animator.js"
+import { Slider } from "./slider.js"
 
-function updateBackgroundParallax() {
-    bodyEl.style.setProperty('--backgroundParallax', -Number(documentEl.scrollTop / 2) + 'px')
+function updateBodyScroll() {
+    let scrollTop = documentEl.scrollTop;
+
+    bodyEl.style.setProperty('--backgroundParallax', -Number(scrollTop / 2) + 'px')
+
+    if (scrollTop > 100) headerEl.classList.add('header--small')
+    else headerEl.classList.remove('header--small')
 }
 
 async function writeHeroTitleText() {
@@ -13,7 +19,7 @@ async function writeHeroTitleText() {
             heroTitleTextNum = 0
         }
         writeHeroTitleText()
-    }, 2000)
+    }, 200)
 }
 
 function animateHeroNotebookCode() {
@@ -44,12 +50,14 @@ let heroTitleTextNum = 0
 const heroNotebookCodeElArr = document.querySelectorAll('.notebook__code')
 let heroNotebookCodeNum = 0
 
+new Slider(bodyEl.querySelector('[data-js-portfolio-slider]'))
+
 
 bodyEl.onscroll = () => {
-    updateBackgroundParallax()
+    updateBodyScroll()
 }
 
-updateBackgroundParallax()
+updateBodyScroll()
 setTimeout(() => { bodyEl.classList.add('loaded') }, 500)
 
 
@@ -68,4 +76,8 @@ headerEl.onclick = (e) => {
 
 
 setTimeout(writeHeroTitleText, 1500)
+setTimeout(() => {
+    heroTitleTextArr.shift()
+    heroTitleTextNum--
+}, 2000)
 setTimeout(animateHeroNotebookCode, 3200)

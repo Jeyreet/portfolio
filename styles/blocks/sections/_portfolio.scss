@@ -1,0 +1,43 @@
+.portfolio {
+  .slider {
+    --slideMaxWidth: 1100px;
+
+    &__item {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      gap: 20px;
+      aspect-ratio: 51 / 20;
+
+      @include tablet-s {
+        aspect-ratio: auto;
+        height: calc(220px + 45cqw);
+        flex-direction: column;
+      }
+
+      &-image {
+        border-radius: 10px;
+        height: 100cqh;
+
+        @include tablet-s {
+          width: 100cqw;
+          height: auto;
+        }
+
+        &-outer {
+          position: relative;
+        }
+      }
+
+      &-info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include tablet-l {
+          gap: 0;
+        }
+      }
+    }
+  }
+}

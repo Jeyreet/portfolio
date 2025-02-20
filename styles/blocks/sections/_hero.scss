@@ -1,7 +1,7 @@
 .hero {
   min-height: calc(100dvh - var(--header-height));
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   gap: 100px;
 
   @include tablet-l {
@@ -67,7 +67,7 @@
   &__second {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
 
   &__notebook {

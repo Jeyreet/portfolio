@@ -71,7 +71,7 @@ body,
   чтобы избежать взаимодействие с более сложным селектором
  */
 p {
-  --paragraphMarginBottom: 24px;
+  --paragraphMarginBottom: 2em;
 
   margin-block: 0;
 }
@@ -213,4 +213,8 @@ svg * {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
 }

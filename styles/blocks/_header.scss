@@ -1,16 +1,14 @@
 .header {
-  backdrop-filter: blur(10px);
-  background-color: var(--color-light-trans);
-  box-shadow: var(--glass-shadow);
-  border: var(--glass-border);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  --smallHeight: calc(var(--header-height) / 1.7);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: none;
   height: var(--header-height);
   padding-inline: var(--padding-inline);
+  padding-block: 0;
   color: var(--color-accent);
   transform: translateY(-100%);
   transition: height .3s;
-  gap: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,7 +17,12 @@
     animation: header--appearing .5s var(--header-appearing-delay) both;
   }
 
+  &--small {
+    height: var(--smallHeight);
+  }
+
   @include desktop-s {
+    --smallHeight: calc(var(--header-height) / 1.5);
     border-radius: 0;
     border-top: none;
     border-left: none;
@@ -27,6 +30,7 @@
   }
 
   @include tablet-s {
+    --smallHeight: var(--header-height);
     flex-direction: column;
     gap: 0;
     overflow-y: clip;
@@ -96,6 +100,10 @@
       align-items: center;
       gap: 2em;
 
+      @include tablet-l {
+        column-gap: .5em;
+      }
+
       @include tablet-s {
         flex-direction: column;
       }
@@ -142,8 +150,8 @@
       background-color: var(--color-accent);
       @include abs-center();
       box-shadow:
-              0 7px var(--color-accent),
-              0 -7px var(--color-accent);
+              0 9px var(--color-accent),
+              0 -9px var(--color-accent);
     }
 
     @include tablet-s {
