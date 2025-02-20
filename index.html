@@ -39,13 +39,13 @@
             <nav class="header__menu">
                 <ul class="header__menu-list">
                     <li class="header__menu-item">
-                        <a href="#" class="header__menu-link">Обо мне</a>
+                        <a href="#about" class="header__menu-link">Обо мне</a>
                     </li>
                     <li class="header__menu-item">
-                        <a href="#" class="header__menu-link">Портфолио</a>
+                        <a href="#portfolio" class="header__menu-link">Портфолио</a>
                     </li>
                     <li class="header__menu-item">
-                        <a href="#" class="header__menu-link">Контакты</a>
+                        <a href="#contacts" class="header__menu-link">Контакты</a>
                     </li>
                 </ul>
             </nav>
@@ -54,10 +54,23 @@
 </header>
 <main class="main container__outer">
     <section class="hero container">
-        <div class="hero__first">
-            <h2 class="hero__title" data-js-hero-title>
-                <span class="hero__title-visible"></span><span class="hero__title-invisible"></span>
-            </h2>
+        <div class="hero__title">
+            <div class="hero__title-absolute-outer">
+                <div class="hero__title-absolute" data-js-hero-title>
+                    <span class="hero__title-visible"></span><span class="hero__title-invisible"></span>
+                </div>
+            </div>
+            <div class="hero__title-measures" data-js-hero-title-measures>
+                <div class="hero__title-measures-text">
+                    <p>Здесь будет меняться какой-нибудь анимированный текст</p>
+                </div>
+                <div class="hero__title-measures-text">
+                    <p>Короткий текст</p>
+                </div>
+                <div class="hero__title-measures-text">
+                    <p>Длинный текст длинный текст длинный текст длинный текст длинный текст длинный текст</p>
+                </div>
+            </div>
         </div>
         <div class="hero__second">
             <div class="hero__notebook notebook">
@@ -204,7 +217,7 @@
             </div>
         </div>
     </section>
-    <section class="about container">
+    <section id="about" class="about container">
         <p>THIS IS ABOUT SECTION</p>
         <p>CONTENT</p>
         <p>CONTENT</p>
@@ -256,7 +269,7 @@
         <p>CONTENT</p>
         <p>CONTENT</p>
     </section>
-    <section class="portfolio container">
+    <section id="portfolio" class="portfolio container">
         <p>THIS IS PORTFOLIO SECTION</p>
         <p>CONTENT</p>
         <p>CONTENT</p>
@@ -308,7 +321,7 @@
         <p>CONTENT</p>
         <p>CONTENT</p>
     </section>
-    <section class="contacts container">
+    <section id="contacts" class="contacts container">
         <p>THIS IS CONTACTS SECTION</p>
         <p>CONTENT</p>
         <p>CONTENT</p>

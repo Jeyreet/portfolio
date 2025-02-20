@@ -1,20 +1,12 @@
-import {HeroTitleAnimator} from "./header_title_animator.js";
+import {HeroTitleAnimator} from "./header_title_animator.js"
 
-const headerEl = document.querySelector('[data-js-header]')
-const menuOpenButtonEl = document.querySelector('[data-js-menu-open-button]')
-const heroTitleEl = document.querySelector('[data-js-hero-title]')
-const heroNotebookCodeElArr = document.querySelectorAll('.notebook__code')
-const heroTitleAnimator = new HeroTitleAnimator(heroTitleEl)
-const heroTitleTextArr = [
-    'Здесь будет меняться какой-нибудь анимированный текст',
-    'Короткий текст',
-    'Длинный текст длинный текст длинный текст длинный текст длинный текст',
-]
+function updateBackgroundParallax() {
+    bodyEl.style.setProperty('--backgroundParallax', -Number(documentEl.scrollTop / 2) + 'px')
+}
 
-let heroTitleTextNum = 0
-
-const writeHeroTitleText = async () => {
+async function writeHeroTitleText() {
     await heroTitleAnimator.write(heroTitleTextArr[heroTitleTextNum])
+    await heroTitleAnimator.hide(heroTitleTextArr[heroTitleTextNum])
 
     setTimeout(() => {
         if (++heroTitleTextNum === heroTitleTextArr.length) {
@@ -24,9 +16,7 @@ const writeHeroTitleText = async () => {
     }, 2000)
 }
 
-let heroNotebookCodeNum = 0
-
-const animateHeroNotebookCode = async () => {
+function animateHeroNotebookCode() {
     heroNotebookCodeElArr[heroNotebookCodeNum].classList.add('shown')
 
     setTimeout(() => {
@@ -36,10 +26,46 @@ const animateHeroNotebookCode = async () => {
     }, 30)
 }
 
-menuOpenButtonEl.onclick = () => {
-    headerEl.classList.toggle('open');
+const documentEl = document.documentElement
+const bodyEl = document.body;
+
+
+const headerEl = document.querySelector('[data-js-header]')
+const menuOpenButtonEl = document.querySelector('[data-js-menu-open-button]')
+
+
+const heroTitleEl = document.querySelector('[data-js-hero-title]')
+const heroTitleMeasureEl = document.querySelector('[data-js-hero-title-measures]')
+const heroTitleTextArr = Array.from(heroTitleMeasureEl.children).map(el => el.innerText)
+const heroTitleAnimator = new HeroTitleAnimator(heroTitleEl)
+let heroTitleTextNum = 0
+
+
+const heroNotebookCodeElArr = document.querySelectorAll('.notebook__code')
+let heroNotebookCodeNum = 0
+
+
+bodyEl.onscroll = () => {
+    updateBackgroundParallax()
 }
 
-setTimeout(() => { document.body.classList.add('loaded') }, 500)
+updateBackgroundParallax()
+setTimeout(() => { bodyEl.classList.add('loaded') }, 500)
+
+
+menuOpenButtonEl.onclick = () => {
+    headerEl.classList.toggle('open')
+}
+
+
+headerEl.onscroll = () => {
+    headerEl.scrollTop = 0
+}
+
+headerEl.onclick = (e) => {
+    if (e.target.closest('a')) headerEl.classList.remove('open')
+}
+
+
 setTimeout(writeHeroTitleText, 1500)
 setTimeout(animateHeroNotebookCode, 3200)

@@ -1,40 +1,80 @@
 .hero {
-  height: calc(100dvh - var(--header-height));
+  min-height: calc(100dvh - var(--header-height));
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 100px;
 
   @include tablet-l {
     grid-template-columns: auto;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto;
     gap: 50px;
-    padding-block: calc(var(--header-height) / 2);
   }
 
   @include tablet-s {
     gap: 20px;
   }
 
-  &__first,
-  &__second {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+  &__title {
+    position: relative;
+    overflow: hidden;
 
-  &__first {
-    will-change: transform;
+    &-absolute {
+      overflow-anchor: none;
 
-    @include tablet-l {
-      justify-content: center;
+      &-outer {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &-measures {
+      display: flex;
+      opacity: 0;
+      pointer-events: none;
+      user-select: none;
+
+      &-text {
+        flex-shrink: 1;
+        flex-grow: 0;
+        width: 100%;
+        margin-inline: -50%;
+        transform: translateX(50%);
+      }
+    }
+
+    & * {
+      font-size: var(--font-size-h1);
+      font-weight: var(--font-weight-high);
+    }
+
+    &-invisible {
+      color: transparent;
+    }
+
+    &--hiding {
+      animation: hiding 2s both;
+    }
+    
+    @keyframes hiding {
+      to {
+        opacity: 0;
+      }
     }
   }
 
   &__second {
-    gap: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 
+  &__notebook {
     @include tablet-l {
-      justify-content: start;
+      width: 100%;
+      max-width: 600px;
+      margin-inline: auto;
     }
   }
 
@@ -55,32 +95,6 @@
         opacity: 0;
         transform: translateY(50%);
       }
-    }
-  }
-
-  &__title {
-    font-size: var(--font-size-h1);
-
-    &-invisible {
-      color: transparent;
-    }
-
-    &--hiding {
-      animation: hiding 2s both;
-    }
-    
-    @keyframes hiding {
-      to {
-        opacity: 0;
-      }
-    }
-  }
-
-  &__notebook {
-    @include tablet-l {
-      width: 100%;
-      max-width: 400px;
-      margin-inline: auto;
     }
   }
 }

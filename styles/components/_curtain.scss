@@ -12,22 +12,22 @@
   }
 
   &__top {
-    bottom: 50vh;
+    bottom: 50%;
   }
 
   &__bottom {
-    top: 50vh;
+    top: 50%;
   }
 
   body.loaded & {
     pointer-events: none;
 
     &__top {
-      bottom: 100vh;
+      bottom: 100%;
     }
 
     &__bottom {
-      top: 100vh;
+      top: 100%;
     }
   }
 }

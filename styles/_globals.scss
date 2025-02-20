@@ -1,11 +1,32 @@
+html {
+  scroll-padding-block: var(--header-height);
+}
+
 body {
+  --backgroundParallax: 0;
+
   font-family: var(--font-family-base);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-base);
   line-height: var(--line-height-base);
   color: var(--color-dark);
-  background: url('/images/background.jpg') var(--color-light-alt);
   padding-top: var(--header-height);
+  background-color: var(--color-light-alt);
+
+  &::before {
+    transform: rotate(180deg);
+    content: '';
+    display: block;
+    position: fixed;
+    top: var(--backgroundParallax); right: 0; left: 0;
+    height: 110lvh;
+    z-index: -1;
+    background: url('../images/background.jpg') center no-repeat;
+    background-size: cover;
+    mix-blend-mode: multiply;
+    filter: grayscale(.5);
+    opacity: .1;
+  }
 }
 
 h1, h2, h3, h4 {

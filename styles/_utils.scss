@@ -19,4 +19,8 @@
   &__outer {
     padding-inline: var(--padding-inline);
   }
+
+  &:not(:first-child) {
+    padding-block: calc(var(--header-height) / 2);
+  }
 }

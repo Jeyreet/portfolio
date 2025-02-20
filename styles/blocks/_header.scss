@@ -127,14 +127,6 @@
           width: calc(100% - .7em);
         }
       }
-
-      &:active {
-        color: var(--color-light);
-
-        &::before {
-          height: calc(100% - .8em);
-        }
-      }
     }
   }
 
