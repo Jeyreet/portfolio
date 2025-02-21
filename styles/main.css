@@ -423,24 +423,21 @@ body.loaded .curtain__bottom {
   position: relative;
   padding-inline: 1em;
 }
-.logo__title {
-  anchor-name: --logo-anchor;
-}
 .logo::before, .logo::after {
-  display: inline-block;
+  display: block;
   position: absolute;
 }
 .logo::before {
   content: attr(data-before-1);
   animation: logo--before-animation 15s calc(var(--header-appearing-delay) + var(--header-logo-delay)) infinite linear;
-  position-anchor: --logo-anchor;
-  right: calc(anchor(left) + 0.2em);
+  left: 0.8em;
+  transform: translateX(-100%);
 }
 .logo::after {
   content: attr(data-after-1);
   animation: logo--after-animation 15s calc(var(--header-appearing-delay) + var(--header-logo-delay)) infinite linear;
-  position-anchor: --logo-anchor;
-  left: calc(anchor(right) + 0.2em);
+  right: 0.8em;
+  transform: translateX(100%);
 }
 
 @keyframes logo--before-animation {
@@ -922,6 +919,9 @@ body.loaded .notebook__screen {
   .slider__controls {
     padding-block: 0;
   }
+}
+.slider__rotate-right, .slider__rotate-left {
+  position: relative;
 }
 .slider__rotate-right::before, .slider__rotate-left::before {
   content: "";

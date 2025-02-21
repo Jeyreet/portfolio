@@ -6,27 +6,27 @@
   padding-inline: 1em;
 
   &__title {
-    anchor-name: --logo-anchor;
+
   }
 
   &::before,
   &::after {
-    display: inline-block;
+    display: block;
     position: absolute;
   }
 
   &::before {
     content: attr(data-before-1);
     animation: logo--before-animation 15s calc(var(--header-appearing-delay) + var(--header-logo-delay)) infinite linear;
-    position-anchor: --logo-anchor;
-    right: calc(anchor(left) + .2em);
+    left: .8em;
+    transform: translateX(-100%);
   }
 
   &::after {
     content: attr(data-after-1);
     animation: logo--after-animation 15s calc(var(--header-appearing-delay) + var(--header-logo-delay)) infinite linear;
-    position-anchor: --logo-anchor;
-    left: calc(anchor(right) + .2em);
+    right: .8em;
+    transform: translateX(100%);
   }
 }
 

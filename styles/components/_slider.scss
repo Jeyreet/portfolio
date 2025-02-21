@@ -69,7 +69,13 @@
     }
   }
 
-  &__rotate-right::before, &__rotate-left::before {
+  &__rotate-right,
+  &__rotate-left {
+    position: relative;
+  }
+
+  &__rotate-right::before,
+  &__rotate-left::before {
     content: '';
     display: block;
     position: absolute;
