@@ -3,7 +3,7 @@
     "sass": "^1.85.0"
   },
   "scripts": {
-    "prefix": "postcss ./styles/main.css --use autoprefixer -o ./styles/style_prefixed.css"
+    "prefix": "postcss ./styles/main.css --use autoprefixer -o ./styles/main_prefixed.css"
   },
   "dependencies": {
     "autoprefixer": "^10.4.20",
