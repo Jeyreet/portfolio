@@ -1,33 +1,26 @@
 .slider {
-  --slideMaxWidth: 900px;
-  --slideMargin: 10px;
-  --marginInline: 0;
-  margin-inline: var(--marginInline);
+  --slideMaxWidth: 600px;
   display: flex;
   flex-direction: column;
 
-  @include tablet-l {
-    --marginInline: calc(var(--padding-inline) * -1);
-    --slideMargin: 15px;
-  }
-
-  @include mobile-l {
-    --slideMargin: 10px;
+  @include desktop-s {
+    margin-inline: calc(var(--padding-inline) * -1);
   }
 
   &__list {
-    mask-image: linear-gradient(to right, transparent 0, #fff 100px, #fff calc(100% - 100px), transparent 100%);
-    mask-size: 100% 100%;
-    mask-repeat: no-repeat;
     display: flex;
     align-items: center;
     overflow: auto;
     scroll-snap-type: x mandatory;
-    padding-inline: calc((100% - var(--slideMaxWidth)) / 2);
+    scroll-snap-stop: always;
+    padding-inline: max(calc((100% - var(--slideMaxWidth)) / 2), var(--padding-inline));
+    gap: 30px;
+    mask-image: linear-gradient(to right, transparent 0, #fff 100px, #fff calc(100% - 100px), transparent 100%);
+    mask-size: 100% 200%;
+    mask-repeat: no-repeat;
 
     @include desktop-s {
       mask-image: none;
-      gap: 0;
     }
 
     &::-webkit-scrollbar {
@@ -36,15 +29,15 @@
   }
 
   &__item {
+    margin: 15px 0 !important;
     padding: 0;
-    width: calc(100% - var(--slideMargin) * 4);
+    width: 100%;
     max-width: var(--slideMaxWidth);
     flex-shrink: 0;
     scroll-snap-align: center;
     container-type: size;
-    margin: var(--slideMargin) calc(var(--slideMargin) * 2) calc(var(--slideMargin) * 1.5) !important;
     overflow: hidden;
-    transition: scale .3s;
+    transition: scale .7s;
 
     &:not([data-selected]) {
       scale: .85;
@@ -52,40 +45,29 @@
   }
 
   &__controls {
-    width: 100%;
-    max-width: var(--slideMaxWidth);
+    padding-top: 10px;
+    width: calc(100% - var(--padding-inline) * 2);
+    max-width: 600px;
     align-self: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px calc(var(--slideMargin) * 2);
 
     & > * {
       margin: 0 !important;
-    }
-
-    @include mobile-l {
-      padding-block: 0;
     }
   }
 
   &__rotate-right,
   &__rotate-left {
-    position: relative;
-  }
-
-  &__rotate-right::before,
-  &__rotate-left::before {
-    content: '';
-    display: block;
-    position: absolute;
-    inset: 0;
     background-image: url('../images/arrow.svg');
-    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
 
-  &__rotate-left::before {
-    transform: rotate(-180deg);
+  &__rotate-left {
+    transform: scaleX(-1);
   }
 
   &__pagination {

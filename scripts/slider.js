@@ -4,7 +4,6 @@ export class Slider {
     paginationButtonElArr
     position = 0
     maxPosition
-    paginationUpdateTimeout
 
     constructor(sliderEl) {
         this.sliderListEl = sliderEl.querySelector('.slider__list')
@@ -18,13 +17,22 @@ export class Slider {
 
         for (let i = 0; i < this.maxPosition; i++) {
             paginationButtonItemEl = paginationButtonItemEl.cloneNode(true)
-            paginationButtonItemEl.children[0].setAttribute('data-position', String(i + 1))
             paginationButtonItemEl.children[0].children[0].textContent = `Слайд ${i + 1}`
             paginationButtonListEl.appendChild(paginationButtonItemEl)
         }
 
+        this.slideElArr.forEach((slideEl, position) => {
+            slideEl.dataset.position = String(position)
+        })
+
         this.paginationButtonElArr = paginationButtonListEl.querySelectorAll('.slider__pagination-button')
         this.paginationButtonElArr[0].setAttribute('data-selected', '')
+
+        this.paginationButtonElArr.forEach((paginationButtonEl, position) => {
+            paginationButtonEl.dataset.position = String(position)
+        })
+
+
 
         sliderEl.onclick = (e) => {
             let target
@@ -39,55 +47,41 @@ export class Slider {
                 let targetPosition = Number(target.getAttribute('data-position'))
 
                 if (targetPosition !== this.position) {
-                    this.position = targetPosition;
-                    this.slide()
+                    this.slide(targetPosition)
                 }
             }
         }
 
-        this.sliderListEl.onscroll = (e) => {
-            let sliderListElRect = this.sliderListEl.getBoundingClientRect()
-            let pointX = sliderListElRect.left + sliderListElRect.width / 2
-            let pointY = sliderListElRect.top + sliderListElRect.height / 2
-            let newPosition = document.elementFromPoint(pointX, pointY).closest('.slider__item')?.dataset.position
-
-            if (newPosition && Number(newPosition) !== this.position) {
-                this.paginationButtonElArr[this.position].removeAttribute('data-selected')
-                this.slideElArr[this.position].removeAttribute('data-selected')
-                this.position = Number(newPosition)
-                this.paginationButtonElArr[this.position].dataset.selected = ''
-                this.slideElArr[this.position].dataset.selected = ''
-            }
+        this.sliderListEl.onscrollsnapchanging = (e) => {
+            this.slideElArr[this.position].removeAttribute('data-selected')
+            this.paginationButtonElArr[this.position].removeAttribute('data-selected')
+            this.position = Number(e.snapTargetInline.getAttribute('data-position'))
+            this.slideElArr[this.position].setAttribute('data-selected', '')
+            this.paginationButtonElArr[this.position].setAttribute('data-selected', '')
         }
-
-        this.slideElArr.forEach((slideEl, position) => {
-            slideEl.dataset.position = String(position)
-        })
-
-        this.paginationButtonElArr.forEach((paginationButtonEl, position) => {
-            paginationButtonEl.dataset.position = String(position)
-        })
     }
 
     rotate(right = true) {
+        let position = this.position + (right ? 1 : -1);
+
         if (right) {
-            if (++this.position > this.maxPosition) {
-                this.position = 0
+            if (position > this.maxPosition) {
+                position = 0
             }
         }
         else {
-            if (--this.position < 0) {
-                this.position = this.maxPosition
+            if (position < 0) {
+                position = this.maxPosition
             }
         }
 
-        this.slide()
+        this.slide(position)
     }
 
-    slide() {
+    slide(position) {
         let sliderListElLeft = this.sliderListEl.offsetLeft
-        let slideElLeft = this.slideElArr[this.position].offsetLeft
-        let slideElWidth = this.slideElArr[this.position].offsetWidth
+        let slideElLeft = this.slideElArr[position].offsetLeft
+        let slideElWidth = this.slideElArr[position].offsetWidth
 
         this.sliderListEl.scrollTo({
             left:slideElLeft - sliderListElLeft - slideElWidth / 2,
