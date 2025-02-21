@@ -1,5 +1,5 @@
 .hero {
-  min-height: calc(100dvh - var(--header-height));
+  min-height: calc(100svh - var(--header-height));
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: 100px;

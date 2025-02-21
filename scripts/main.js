@@ -79,5 +79,5 @@ setTimeout(writeHeroTitleText, 1500)
 setTimeout(() => {
     heroTitleTextArr.shift()
     heroTitleTextNum--
-}, 2000)
+}, 1550)
 setTimeout(animateHeroNotebookCode, 3200)
