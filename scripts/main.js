@@ -4,7 +4,7 @@ import { Slider } from "./slider.js"
 function updateBodyScroll() {
     let scrollTop = documentEl.scrollTop;
 
-    bodyEl.style.setProperty('--backgroundParallax', -Number(scrollTop / 2) + 'px')
+    bodyEl.style.setProperty('--backgroundParallax', Number(scrollTop / 2) + 'px')
 
     if (scrollTop > 100) headerEl.classList.add('header--small')
     else headerEl.classList.remove('header--small')
