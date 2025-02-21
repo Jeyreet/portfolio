@@ -12,7 +12,6 @@
     align-items: center;
     overflow: auto;
     scroll-snap-type: x mandatory;
-    scroll-snap-stop: always;
     padding-inline: max(calc((100% - var(--slideMaxWidth)) / 2), var(--padding-inline));
     gap: 30px;
     mask-image: linear-gradient(to right, transparent 0, #fff 100px, #fff calc(100% - 100px), transparent 100%);
@@ -38,6 +37,7 @@
     container-type: size;
     overflow: hidden;
     transition: scale .7s;
+    scroll-snap-stop: always;
 
     &:not([data-selected]) {
       scale: .85;

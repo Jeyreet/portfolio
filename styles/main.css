@@ -225,7 +225,7 @@ a {
 }
 :root {
   --color-light: #ffffff;
-  --color-light-trans: #ffffffbb;
+  --color-light-trans: rgba(255, 255, 255, 0.93);
   --color-light-alt: #f1f1f1;
   --color-dark: #140e33;
   --color-dark-trans: #140e3355;
@@ -314,7 +314,6 @@ a {
 }
 
 .glass-block {
-  backdrop-filter: blur(5px);
   background-color: var(--color-light-trans);
   box-shadow: var(--glass-shadow);
   border: var(--glass-border);
@@ -865,7 +864,6 @@ body.loaded .notebook__screen {
   align-items: center;
   overflow: auto;
   scroll-snap-type: x mandatory;
-  scroll-snap-stop: always;
   padding-inline: max((100% - var(--slideMaxWidth)) / 2, var(--padding-inline));
   gap: 30px;
   mask-image: linear-gradient(to right, transparent 0, #fff 100px, #fff calc(100% - 100px), transparent 100%);
@@ -890,6 +888,7 @@ body.loaded .notebook__screen {
   container-type: size;
   overflow: hidden;
   transition: scale 0.7s;
+  scroll-snap-stop: always;
 }
 .slider__item:not([data-selected]) {
   scale: 0.85;
