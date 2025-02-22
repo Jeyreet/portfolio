@@ -14,7 +14,7 @@ body {
   background-color: var(--color-light-alt);
 
   &::before {
-    transform: rotate(180deg) translateY(var(--backgroundParallax));
+    transform: translateZ(0) rotate(180deg) translateY(var(--backgroundParallax));
     will-change: transform;
     content: '';
     display: block;

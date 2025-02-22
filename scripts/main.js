@@ -14,12 +14,10 @@ async function writeHeroTitleText() {
     await heroTitleAnimator.write(heroTitleTextArr[heroTitleTextNum])
     await heroTitleAnimator.hide(heroTitleTextArr[heroTitleTextNum])
 
-    setTimeout(() => {
-        if (++heroTitleTextNum === heroTitleTextArr.length) {
-            heroTitleTextNum = 0
-        }
-        writeHeroTitleText()
-    }, 200)
+    if (++heroTitleTextNum === heroTitleTextArr.length) {
+        heroTitleTextNum = 0
+    }
+    writeHeroTitleText()
 }
 
 function animateHeroNotebookCode() {

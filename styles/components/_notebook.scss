@@ -3,7 +3,7 @@
   position: relative;
   container-type: size;
   opacity: 0;
-  transform: translateY(-100%);
+  transform: translateY(-100%) translateZ(0);
   animation-timing-function: ease-in-out;
 
   body.loaded & {
@@ -60,7 +60,7 @@
       animation: notebook__top--opening .8s calc(var(--notebook-appearing-delay) + var(--notebook-top-opening-delay)) both;
     }
 
-    transform: perspective(130cqw) rotateX(3deg);
+    transform: perspective(130cqw) rotateX(3deg) translateZ(0);
     z-index: 1;
     box-shadow: 0 1cqw 0 -.5cqw var(--color-dark);
 
@@ -84,7 +84,7 @@
   }
 
   &__bottom {
-    transform: perspective(130cqw) rotateX(-110deg);
+    transform: translateZ(0) perspective(130cqw) rotateX(-110deg);
     box-shadow:
             0 -1cqw 0 -.5cqw var(--color-dark),
             0 -1.5cqw 0 -.75cqw var(--color-dark),

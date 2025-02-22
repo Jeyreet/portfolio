@@ -360,7 +360,7 @@ body {
   background-color: var(--color-light-alt);
 }
 body::before {
-  transform: rotate(180deg) translateY(var(--backgroundParallax));
+  transform: translateZ(0) rotate(180deg) translateY(var(--backgroundParallax));
   will-change: transform;
   content: "";
   display: block;
@@ -615,7 +615,7 @@ body.loaded .curtain__bottom {
   position: relative;
   container-type: size;
   opacity: 0;
-  transform: translateY(-100%);
+  transform: translateY(-100%) translateZ(0);
   animation-timing-function: ease-in-out;
 }
 body.loaded .notebook {
@@ -656,7 +656,7 @@ body.loaded .notebook__top-backface {
   }
 }
 .notebook__top {
-  transform: perspective(130cqw) rotateX(3deg);
+  transform: perspective(130cqw) rotateX(3deg) translateZ(0);
   z-index: 1;
   box-shadow: 0 1cqw 0 -0.5cqw var(--color-dark);
 }
@@ -677,7 +677,7 @@ body.loaded .notebook__top {
   }
 }
 .notebook__bottom {
-  transform: perspective(130cqw) rotateX(-110deg);
+  transform: translateZ(0) perspective(130cqw) rotateX(-110deg);
   box-shadow: 0 -1cqw 0 -0.5cqw var(--color-dark), 0 -1.5cqw 0 -0.75cqw var(--color-dark), 0 -2cqw 0 -1cqw var(--color-dark), 0 -2.5cqw 0 -1.25cqw var(--color-dark), 0 -3cqw 0 -1.5cqw var(--color-dark), 0 -3.5cqw 0 -1.75cqw var(--color-dark);
   top: 1cqw;
   display: grid;
@@ -1158,7 +1158,7 @@ body.loaded .header {
   color: transparent;
 }
 .hero__title--hiding {
-  animation: hiding 2s both;
+  animation: hiding 1.7s both;
 }
 @keyframes hiding {
   to {

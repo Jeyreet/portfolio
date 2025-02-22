@@ -14,11 +14,11 @@ export class HeroTitleAnimator {
             const interval = setInterval(() => {
                 if (this.heroTitleInvisibleElement.textContent.length === 0) {
                     clearInterval(interval)
-                    setTimeout(resolve, 1000)
+                    setTimeout(resolve, 700)
                 }
                 else {
-                    this.heroTitleVisibleElement.textContent += this.heroTitleInvisibleElement.textContent.substr(0, 1)
-                    this.heroTitleInvisibleElement.textContent = this.heroTitleInvisibleElement.textContent.substr(1)
+                    this.heroTitleVisibleElement.textContent += this.heroTitleInvisibleElement.textContent.slice(0, 1)
+                    this.heroTitleInvisibleElement.textContent = this.heroTitleInvisibleElement.textContent.slice(1)
                 }
             }, 50)
         })
@@ -27,7 +27,7 @@ export class HeroTitleAnimator {
     hide() {
         return new Promise(resolve => {
             this.heroTitleElement.classList.add('hero__title--hiding')
-            setTimeout(resolve, 2000)
+            setTimeout(resolve, 1600)
         })
     }
 }
